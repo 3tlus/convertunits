@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chuyển đổi Đơn vị</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>Chuyển đổi Đơn vị</h1>
+    <div class="converter">
+        <input type="number" id="inputValue" placeholder="Nhập giá trị">
+        <select id="fromUnit">
+            <option value="kg">Kilogram (kg)</option>
+            <option value="g">Gram (g)</option>
+            <option value="kíp">kíp</option>
+            <option value="microgram">microgram</option>
+            <option value="miligram">miligram</option>
+            <option value="pound">pound</option>  
+            <option value="tạ">tạ</option>  
+            <option value="tấn">tấn</option>  
+        </select>
+        <span>=</span>
+        <span id="result">Kết quả sẽ xuất hiện ở đây</span>
+        <select id="toUnit">
+            <option value="kg">Kilogram (kg)</option>
+            <option value="g">Gram (g)</option>
+            <option value="kíp">kíp</option>
+            <option value="microgram">microgram</option>
+            <option value="miligram">miligram</option>
+            <option value="pound">pound</option>  
+            <option value="tạ">tạ</option>  
+            <option value="tấn">tấn</option>  
+        </select>
+        <button onclick="convert()">Chuyển đổi Khối lượng</button>
+    </div>
+
+    <div class="converter">
+        <input type="number" id="inputValueVolume" placeholder="Nhập giá trị">
+        <select id="fromUnitVolume">
+            <option value="liter">Liter (L)</option>
+            <option value="milliliter">Milliliter (mL)</option>
+        </select>
+        <span>=</span>
+        <span id="resultVolume">Kết quả sẽ xuất hiện ở đây</span>
+        <select id="toUnitVolume">
+            <option value="liter">Liter (L)</option>
+            <option value="milliliter">Milliliter (mL)</option>
+        </select>
+        <button onclick="convertVolume()">Chuyển đổi Thể tích</button>
+    </div>
+
+    <div class="converter">
+        <input type="number" id="inputValuePressure" placeholder="Nhập giá trị">
+        <select id="fromUnitPressure">
+            <option value="atm">Atmosphere (Atm)</option>
+            <option value="bar">Bar</option>
+        </select>
+        <span>=</span>
+        <span id="resultPressure">Kết quả sẽ xuất hiện ở đây</span>
+        <select id="toUnitPressure">
+            <option value="atm">Atmosphere (Atm)</option>
+            <option value="bar">Bar</option>
+        </select>
+        <button onclick="convertPressure()">Chuyển đổi Áp suất</button>
+    </div>
+    
+    <script src="js.js"></script>
+</body>
+</html>
