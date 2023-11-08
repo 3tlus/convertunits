@@ -99,3 +99,24 @@ button:hover {
         transform: translateY(0);
     }
 }
+.about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.5;
+}/* Định dạng thẻ "About" */
+.about-link {
+    text-decoration: none; /* Loại bỏ dấu gạch dưới */
+    color: #007bff; /* Đổi màu chữ (màu xanh dương) theo ý muốn */
+    font-weight: bold; /* Tạo chữ in đậm */
+    font-size: 16px; /* Đặt kích thước phông chữ */
+    transition: color 0.3s; /* Tạo hiệu ứng chuyển màu khi rê chuột */
+
+    /* Nếu bạn muốn thay đổi màu khi hover chuột qua */
+}
+
+.about-link:hover {
+    color: #ff5733; /* Thay đổi màu chữ khi hover chuột qua (màu cam) */
+}
