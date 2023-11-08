@@ -1,37 +1,101 @@
+/* Global styles */
 body {
+    background-color: #f4f4f4;
     font-family: Arial, sans-serif;
     text-align: center;
-    background-color: #f4f4f4;
+    margin: 0;
+    padding: 0;
 }
 
 h1 {
-    color: #333;
+    background-color: #0074d9;
+    color: #fff;
+    padding: 10px;
+    margin: 0;
 }
 
-.converter {
-    margin: 20px auto;
-    padding: 20px;
+/* Styling for each converter section */
+.converter-mass,
+.converter-volume,
+.converter-pressure,
+.converter-length,
+.converter-area,
+.converter-speed {
+    background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
-    background-color: #fff;
+    padding: 20px;
     width: 300px;
-    display: inline-block; /* Chuyển thành hàng */
+    margin: 20px;
+    display: inline-block;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
 }
 
-input, select, button {
-    margin: 5px;
-    padding: 5px;
-    display: block;
+/* On hover, apply a subtle scale effect */
+.converter-mass:hover,
+.converter-volume:hover,
+.converter-pressure:hover,
+.converter-length:hover,
+.converter-area:hover,
+.converter-speed:hover {
+    transform: scale(1.03);
 }
 
+/* Styling for input and select elements */
+input, select {
+    padding: 5px; /* Adjust padding for even spacing */
+    width: 100%; /* Adjust the input and select width for responsiveness */
+    font-size: 16px;
+    margin-bottom: 10px; /* Adjust margin for spacing between elements */
+}
+/* Styling for buttons */
 button {
     background-color: #0074d9;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
+    width: 100%;
+    font-size: 18px;
+    padding: 12px;
+    margin-top: 15px;
+    transition: background-color 0.3s;
 }
 
 button:hover {
     background-color: #0056b3;
+}
+
+/* Styling for result displays */
+#resultMass,
+#resultVolume,
+#resultPressure,
+#resultLength,
+#resultArea,
+#resultSpeed {
+    margin: 15px 0;
+    font-weight: bold;
+    font-size: 20px;
+}
+
+/* Add animation to the converter boxes */
+.converter-mass,
+.converter-volume,
+.converter-pressure,
+.converter-length,
+.converter-area,
+.converter-speed {
+    animation: slideIn 0.5s ease-in-out;
+}
+
+@keyframes slideIn {
+    0% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
