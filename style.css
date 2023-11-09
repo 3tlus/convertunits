@@ -20,7 +20,7 @@ h1 {
 .converter-pressure,
 .converter-length,
 .converter-area,
-.converter-speed {
+.converter-radioactivity {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
@@ -38,7 +38,7 @@ h1 {
 .converter-pressure:hover,
 .converter-length:hover,
 .converter-area:hover,
-.converter-speed:hover {
+.converter-radioactivity:hover {
     transform: scale(1.03);
 }
 
@@ -73,7 +73,7 @@ button:hover {
 #resultPressure,
 #resultLength,
 #resultArea,
-#resultSpeed {
+#resultRadioactivity {
     margin: 15px 0;
     font-weight: bold;
     font-size: 20px;
@@ -85,7 +85,7 @@ button:hover {
 .converter-pressure,
 .converter-length,
 .converter-area,
-.converter-speed {
+.converter-radioactivity {
     animation: slideIn 0.5s ease-in-out;
 }
 
