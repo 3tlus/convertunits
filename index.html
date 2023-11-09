@@ -183,29 +183,32 @@
     </select>
     <span id="resultArea">Kết quả sẽ xuất hiện ở đây</span>
 </div>
-<!-- Vận Tốc -->
-<div class="converter-speed">
-    <h1 class="section-title"><i class="fas fa-car"></i>Bảng Vận Tốc  <i class="fas fa-car"></i></h1>
-    <input type="number" id="inputValueSpeed" placeholder="Nhập giá trị">
-    <select id="fromUnitSpeed" onchange="convertSpeed()">
-        <option value="cmh">Centimeter per Giờ (cm/giờ)</option>
-        <option value="cmp">Centimeter per Phút (cm/phút)</option>
-        <option value="cms">Centimeter per Giây (cm/giây)</option>
-        <option value="kmh">Kilometer per Giờ (km/giờ)</option>
-        <option value="kmp">Kilometer per Phút (km/phút)</option>
-        <option value="kms">Kilometer per Giây (km/giây)</option>
+<!-- Cường Độ Phóng Xạ -->
+<div class="converter-radioactivity">
+    <h1  class="section-title"  ><i class="fas fa-radiation-alt" ></i> Bảng Cường Độ Phóng Xạ<i class="fas fa-radiation-alt"></i></h1>
+    <input type="number" id="inputValueRadioactivity" placeholder="Nhập giá trị">
+    <select id="fromUnitRadioactivity" onchange="convertRadioactivity()">
+        <option value="Bq">Becquerel (Bq)</option>
+        <option value="Ci">Curie (Ci)</option>
+        <option value="GBq">Gigabecquerel (GBq)</option>
+        <option value="kBq">Kilobecquerel (kBq)</option>
+        <option value="MBq">Megabecquerel (MBq)</option>
+        <option value="mCi">Millicurie (mCi)</option>
+        <option value="µCi">Microcurie (µCi)</option>
+        <option value="nCi">Nanocurie (nCi)</option>
     </select>
-    <select id="toUnitSpeed" onchange="convertSpeed()">
-        <option value="cmh">Centimeter per Giờ (cm/giờ)</option>
-        <option value="cmp">Centimeter per Phút (cm/phút)</option>
-        <option value="cms">Centimeter per Giây (cm/giây)</option>
-        <option value="kmh">Kilometer per Giờ (km/giờ)</option>
-        <option value="kmp">Kilometer per Phút (km/phút)</option>
-        <option value="kms">Kilometer per Giây (km/giây)</option>
+    <select id="toUnitRadioactivity" onchange="convertRadioactivity()">
+        <option value="Bq">Becquerel (Bq)</option>
+        <option value="Ci">Curie (Ci)</option>
+        <option value="GBq">Gigabecquerel (GBq)</option>
+        <option value="kBq">Kilobecquerel (kBq)</option>
+        <option value="MBq">Megabecquerel (MBq)</option>
+        <option value="mCi">Millicurie (mCi)</option>
+        <option value="µCi">Microcurie (µCi)</option>
+        <option value="nCi">Nanocurie (nCi)</option>
     </select>
-    <span id="resultSpeed">Kết quả sẽ xuất hiện ở đây</span>
+    <span id="resultRadioactivity">Kết quả sẽ xuất hiện ở đây</span>
 </div>
-
     <script src="js.js"></script>
 </body>
 </html>
