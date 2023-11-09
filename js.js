@@ -24,17 +24,17 @@ const fromUnitSpeed = document.getElementById("fromUnitSpeed");
 const toUnitArea = document.getElementById("toUnitArea");
 const resultArea = document.getElementById("resultArea");
 // Van toc
-const inputValueSpeed = document.getElementById("inputValueSpeed");
-const fromUnitArea = document.getElementById("fromUnitArea");
-const toUnitSpeed = document.getElementById("toUnitSpeed");
-const resultSpeed = document.getElementById("resultSpeed");
+const inputValueRadioactivity = document.getElementById("inputValueRadioactivity");
+const fromUnitRadioactivity = document.getElementById("fromUnitRadioactivity");
+const toUnitRadioactivity = document.getElementById("toUnitRadioactivity");
+const resultRadioactivity = document.getElementById("resultRadioactivity");
 // Input
 inputValueElement.addEventListener("input", convertMass);
 inputValueVolume.addEventListener("input", convertVolume);
 inputValuePressure.addEventListener("input", convertPressure);
 inputValueLength.addEventListener("input", convertLength);
 inputValueArea.addEventListener("input", convertArea);
-inputValueSpeed.addEventListener("input", convertSpeed);
+inputValueRadioactivity.addEventListener("input", convertRadioactivity);
 // Khoi Luong
 function convertMass() {
     const inputValue = parseFloat(document.getElementById("inputValue").value);
@@ -49,49 +49,49 @@ function convertMass() {
             result = inputValue * 1000;
             break;
         case "microgram":
-            result = inputValue * 1e9;
+            result = inputValue * 1000000000;
             break;
         case "miligram":
-            result = inputValue * 1e6;
+            result = inputValue * 1000000;
             break;
         case "pound":
-            result = inputValue * 2.20462;
+            result = inputValue * 2.205;
             break;
         case "tạ":
-            result = inputValue * 0.0110231;
+            result = inputValue *0.01            ;
             break;
         case "tấn":
             result = inputValue * 0.001;
             break;
         case "kíp":
-            result = inputValue * 0.00220462;
+            result = inputValue * 0.002205;
             break;
         default:
             result = inputValue; // Đơn vị nguồn và đích giống nhau
     }
 }
-if (fromUnit === "g") {
+if (fromUnit === "g") { 
     switch (toUnit) {
         case "kg":
             result = inputValue / 1000;
             break;
         case "kíp":
-            result = inputValue * 0.00110231;
+            result = inputValue *0.000002;
             break;
         case "microgram":
-            result = inputValue * 1e6;
+            result = inputValue * 1000000;
             break;
         case "miligram":
             result = inputValue * 1000;
             break;
         case "pound":
-            result = inputValue / 453.59237;
+            result = inputValue *0.002;
             break;
         case "tạ":
-            result = inputValue * 1e-5;
+            result = inputValue * 0.00001            ;
             break;
         case "tấn":
-            result = inputValue / 1e6;
+            result = inputValue * 0.000001            ;
             break;
         default:
             result = inputValue; // Đơn vị nguồn và đích giống nhau
@@ -106,7 +106,7 @@ if (fromUnit === "kíp") {
             result = inputValue * 453592.37;
             break;
         case "microgram":
-            result = inputValue * 4.5359237e8;
+            result = inputValue * 453592370000;
             break;
         case "miligram":
             result = inputValue * 453592370;
@@ -115,10 +115,10 @@ if (fromUnit === "kíp") {
             result = inputValue * 1000;
             break;
         case "tạ":
-            result = inputValue * 0.00110231;
+            result = inputValue * 4.536;
             break;
         case "tấn":
-            result = inputValue * 0.00045359237;
+            result = inputValue * 0.454;
             break;
         default:
             result = inputValue; // Đơn vị nguồn và đích giống nhau
@@ -1898,150 +1898,237 @@ function convertArea() {
     }
     document.getElementById("resultArea").innerText = result + " " + toUnit;
 }
-// Vận Tốc
-function convertSpeed() {
-    // Lấy giá trị đầu vào và đơn vị ban đầu
-    const inputValue = parseFloat(document.getElementById("inputValueSpeed").value);
-    const fromUnit = document.getElementById("fromUnitSpeed").value;
+//  Cường Độ Phóng Xạ
+function convertRadioactivity() {
+    // Lấy giá trị và đơn vị nguồn
+    const  inputValue = parseFloat(document.getElementById("inputValueRadioactivity").value);
+    const  fromUnit = document.getElementById("fromUnitRadioactivity").value;
 
     // Lấy đơn vị đích
-    const toUnit = document.getElementById("toUnitSpeed").value;
+    const  toUnit = document.getElementById("toUnitRadioactivity").value;
 
-    // Khai báo biến cho kết quả
-    let result = 0;
-
-    if (fromUnit === "cmh") {
-        switch (toUnit) {
-            case "cmp":
-                result = inputValue * 0.0166667; // 1 cm/giờ = 0.0166667 cm/phút
-                break;
-            case "cms":
-                result = inputValue * 0.000277778; // 1 cm/giờ = 0.000277778 cm/giây
-                break;
-            case "kmh":
-                result = inputValue * 0.00001                ; // 1 cm/giờ = 0.036 km/giờ
-                break;
-            case "kmp":
-                result = inputValue * 0.0006; // 1 cm/giờ = 0.0006 km/phút
-                break;
-            case "kms":
-                result = inputValue * 0.00001; // 1 cm/giờ = 0.00001 km/giây
-                break;
-            default:
-                result = inputValue;
-        }
-    }
-    if (fromUnit === "cmp") {
-        switch (toUnit) {
-            case "cmh":
-                result = inputValue * 60; // 1 cm/phút = 60 cm/giờ
-                break;
-            case "cms":
-                result = inputValue * 0.0166667; // 1 cm/phút = 0.0166667 cm/giây
-                break;
-            case "kmh":
-                result = inputValue * 0.0006; // 1 cm/phút = 0.6 km/giờ
-                break;
-            case "kmp":
-                result = inputValue * 0.00001; // 1 cm/phút = 0.01 km/phút
-                break;
-            case "kms":
-                result = inputValue * 0.000166667; // 1 cm/phút = 0.000166667 km/giây
-                break;
-            default:
-                result = inputValue;
-        }
-    }
-    if (fromUnit === "cms") {
-        switch (toUnit) {
-            case "cmh":
-                result = inputValue * 3600; // 1 cm/giây = 3600 cm/giờ
-                break;
-            case "cmp":
-                result = inputValue * 60; // 1 cm/giây = 60 cm/phút
-                break;
-            case "kmh":
-                result = inputValue * 0.036; // 1 cm/giây = 3.6 km/giờ
-                break;
-            case "kmp":
-                result = inputValue * 0.0006; // 1 cm/giây = 0.06 km/phút
-                break;
-            case "kms":
-                result = inputValue * 0.00001; // 1 cm/giây = 0.001 km/giây
-                break;
-            default:
-                result = inputValue;
-        }
-    }
-    if (fromUnit === "kmh") {
-        switch (toUnit) {
-            case "cmh":
-                result = inputValue *100000; // 1 km/giờ = 27,777.8 cm/giờ
-                break;
-            case "cmp":
-                result = inputValue * 1666.67; // 1 km/giờ = 1,666.67 cm/phút
-                break;
-            case "cms":
-                result = inputValue * 1666.666667                ; // 1 km/giờ = 277.778 cm/giây
-                break;
-            case "kmp":
-                result = inputValue * 0.016667; // 1 km/giờ = 16.6667 km/phút
-                break;
-            case "kms":
-                result = inputValue *0.000278; // 1 km/giờ = 0.277778 km/giây
-                break;
-            default:
-                result = inputValue;
-        }
-    }
-    if (fromUnit === "kmp") {
-        switch (toUnit) {
-            case "cmh":
-                result = inputValue * 6000000; // 1 km/phút = 100,000 cm/giờ
-                break;
-            case "cmp":
-                result = inputValue * 100000; // 1 km/phút = 6,000 cm/phút
-                break;
-            case "cms":
-                result = inputValue * 1666.666667                ; // 1 km/phút = 100 cm/giây
-                break;
-            case "kmh":
-                result = inputValue * 60; // 1 km/phút = 60 km/giờ
-                break;
-            case "kms":
-                result = inputValue * 0.016667; // 1 km/phút = 0.00166667 km/giây
-                break;
-            default:
-                result = inputValue;
-        }
-    }   
-    if (fromUnit === "kms") {
-        switch (toUnit) {
-            case "cmh":
-                result = inputValue * 360000000; // 1 km/giây = 3,600,000 cm/giờ
-                break;
-            case "cmp":
-                result = inputValue * 6000000; // 1 km/giây = 60,000 cm/phút
-                break;
-            case "cms":
-                result = inputValue * 100000; // 1 km/giây = 1,000 cm/giây
-                break;
-            case "kmh":
-                result = inputValue * 3600; // 1 km/giây = 3,600 km/giờ
-                break;
-            case "kmp":
-                result = inputValue * 60            ; // 1 km/giây = 60 km/phút
-                break;
-            default:
-                result = inputValue;
-        }
-    }
+    // Thực hiện chuyển đổi
+  let result = 0;
 
 
-    document.getElementById("resultSpeed").innerText = result + " " + toUnit;
+    if(fromUnit ==="Bq"){
+        switch (toUnit) {
+            case "Ci":
+                result = inputValue  * 2.703e-11;
+                break;
+            case "GBq":
+                result = inputValue  * 1e-9;
+                break;
+            case "kBq":
+                result = inputValue  * 1e-3;
+                break;
+            case "MBq":
+                result = inputValue  * 1e-6;
+                break;
+            case "mCi":
+                result = inputValue  * 2.703e-8;
+                break;
+            case "µCi":
+                result = inputValue * 2.703e-5;
+                break;
+            case "nCi":
+                result = inputValue  * 2.703e-2;
+                break;
+                default:
+                    result = inputValue;
+        }
+    }
+    if (fromUnit === "Ci") {
+        switch (toUnit) {
+            case "Bq":
+                result = inputValue / 2.703e-11;
+                break;
+            case "GBq":
+                result = inputValue * 37 ;
+                break;
+            case "kBq":
+                result = inputValue * 37000000;
+                break;
+            case "MBq":
+                result = inputValue * 37000;
+                break;
+            case "mCi":
+                result = inputValue * 1000;
+                break;
+            case "µCi": 
+                result = inputValue * 1000000;
+                break;
+            case "nCi":
+                result = inputValue *1000000000;
+                break;
+            default:
+                result = inputValue;
+        }
+    }
+    if (fromUnit === "GBq") {
+        switch (toUnit) {
+            case "Bq":
+                result = inputValue * 1000000000;
+                break;
+            case "Ci":
+                result = inputValue * 2.703e-11;
+                break;
+            case "kBq": 
+                result = inputValue * 1e6;
+                break;
+            case "MBq":
+                result = inputValue * 1e3;
+                break;
+            case "mCi":
+                result = inputValue * 2.703e2;
+                break;
+            case "µCi":
+                result = inputValue *  27027.027027027;
+                break;
+            case "nCi":
+                result = inputValue * 27027027.027027;
+                break;
+            default:
+                result = inputValue;
+        }
+    }
+    if (fromUnit === "kBq") {
+        switch (toUnit) {
+            case "Bq":
+                result = inputValue * 1e3;
+                break;
+            case "Ci":
+                result = inputValue / 2.703e8;
+                break;
+            case "GBq":
+                result = inputValue * 1e-6;
+                break;
+            case "MBq":
+                result = inputValue* 1e-3;
+                break;
+            case "mCi":
+                result = inputValue / 2.703e5;
+                break;
+            case "µCi":
+                result = inputValue / 2.703e2;
+                break;
+            case "nCi":
+                result = inputValue* 27.027027;
+                break;
+            default:
+                result = inputValue ;
+          
+        }}
+        if (fromUnit === "MBq") {
+            switch (toUnit) {
+                case "Bq":
+                    result = inputValue  * 1e6;
+                    break;
+                case "Ci":
+                    result = inputValue  * 0.000027027;
+                    break;
+                case "GBq":
+                    result = inputValue  / 1e3;
+                    break;
+                case "kBq":
+                    result = inputValue  * 1e3;
+                    break;
+                case "mCi":
+                    result = inputValue  / 2.703e2;
+                    break;
+                case "µCi":
+                    result = inputValue  / 2.703e-1;
+                    break;
+                case "nCi":
+                    result = inputValue  * 27027.027027027;
+                    break;
+                default:
+                    result = inputValue ;
+            }
+        } 
+        if (fromUnit === "mCi") {
+            switch (toUnit) {
+                case "Bq":
+                    result = inputValue * 3.7e7;
+                    break;
+                case "Ci":
+                    result = inputValue * 1e-3;
+                    break;
+                case "GBq":
+                    result = inputValue * 3.7e-2;
+                    break;
+                case "kBq":
+                    result = inputValue * 3.7e4;
+                    break;
+                case "MBq":
+                    result = inputValue * 37;
+                    break;
+                case "µCi":
+                    result = inputValue * 1e3;
+                    break;
+                case "nCi":
+                    result = inputValue * 1e6;
+                    break;
+                default:
+                    result = inputValue;
+            }
+        }
+            if (fromUnit === "µCi") {
+                switch (toUnit) {
+                    case "Bq":
+                        result = inputValue * 3.7e4;
+                        break;
+                    case "Ci":
+                        result = inputValue * 1e-6;
+                        break;
+                    case "GBq":
+                        result = inputValue * 3.7e-5;
+                        break;
+                    case "kBq":
+                        result = inputValue * 37;
+                        break;
+                    case "MBq":
+                        result = inputValue * 3.7e-2;
+                        break;
+                    case "mCi":
+                        result = inputValue * 1e-3;
+                        break;
+                    case "nCi":
+                        result = inputValue * 1e3;
+                        break;
+                    default:
+                        result = inputValue;
+                }
+            }
+            if (fromUnit === "nCi") {
+                switch (toUnit) {
+                    case "Bq":
+                        result = inputValue * 37;
+                        break;
+                    case "Ci":
+                        result = inputValue * 1e-9;
+                        break;
+                    case "GBq":
+                        result = inputValue * 3.7e-8;
+                        break;
+                    case "kBq":
+                        result = inputValue * 0.037;
+                        break;
+                    case "MBq":
+                        result = inputValue * 3.7e-5;
+                        break;
+                    case "mCi":
+                        result = inputValue * 1e-6;
+                        break;
+                    case "µCi":
+                        result = inputValue * 1e-3;
+                        break;
+                    default:
+                        result = inputValue;
+                }
+            }
+
+  document.getElementById("resultRadioactivity").innerText = result + " " + toUnit;
 }
-
-
-
 
 
