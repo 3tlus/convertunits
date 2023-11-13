@@ -4,35 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title >Chuyển đổi Đơn vị</title>
-   
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Thêm thẻ script để tải thư viện AOS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
     <style>
-        /* Adjust the size and alignment of the icons */
-        .section-title {
-            font-size: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .section-title i {
-            font-size: 24px; /* Adjust the icon size as needed */
-            margin-right: 5px;
-        }
     </style>
-
 </head>
 <body>
-
     <h1><i class="fas fa-balance-scale"></i> Chuyển đổi Đơn vị<i class="fas fa-balance-scale"></i></h1>
     <div class="about-container">
         <a href="about.html" class="about-link">About</a>
-
     </div>
     <!-- KHỐI LƯỢNG -->
     <div class="converter-mass"  >
+      
         <h1 class="section-title"><i class="fas fa-weight-hanging"></i>Bảng Khối Lượng<i class="fas fa-weight-hanging"></i></h1>
+
         <input type="number" id="inputValue" placeholder="Nhập giá trị">
         <select id="fromUnit" onchange="convertMass()">
             <option value="kg">Kilogram (kg)</option>
@@ -209,6 +200,16 @@
     </select>
     <span id="resultRadioactivity">Kết quả sẽ xuất hiện ở đây</span>
 </div>
+
+
     <script src="js.js"></script>
+    <!-- Thêm phần footer vào cuối trang -->
+    <footer>
+        <div class="social-icons">
+            <a href="https://www.facebook.com/VNUHCM.US" target="_blank" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+            <a href="https://www.linkedin.com/school/vnuhcm---university-of-science/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2023 Chuyển đổi Đơn vị. All rights reserved.</p>
+    </footer>
 </body>
 </html>
