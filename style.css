@@ -6,6 +6,17 @@ body {
     margin: 0;
     padding: 0;
 }
+.section-title {
+    font-size: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.section-title i {
+    font-size: 24px; /* Adjust the icon size as needed */
+    margin-right: 5px;
+}
 
 h1 {
     background-color: #0074d9;
@@ -24,13 +35,14 @@ h1 {
     background-color: #fff;
     border: 1px solid #ccc;
     border-radius: 5px;
-    padding: 20px;
+    padding: 14px;
     width: 300px;
     margin: 20px;
     display: inline-block;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
 }
+
 
 /* On hover, apply a subtle scale effect */
 .converter-mass:hover,
@@ -43,12 +55,14 @@ h1 {
 }
 
 /* Styling for input and select elements */
-input, select {
+input,
+select {
     padding: 5px; /* Adjust padding for even spacing */
     width: 100%; /* Adjust the input and select width for responsiveness */
     font-size: 16px;
     margin-bottom: 10px; /* Adjust margin for spacing between elements */
 }
+
 /* Styling for buttons */
 button {
     background-color: #0074d9;
@@ -89,6 +103,7 @@ button:hover {
     animation: slideIn 0.5s ease-in-out;
 }
 
+
 @keyframes slideIn {
     0% {
         opacity: 0;
@@ -99,6 +114,8 @@ button:hover {
         transform: translateY(0);
     }
 }
+
+/* Định dạng thẻ "About" */
 .about-container {
     max-width: 800px;
     margin: 0 auto;
@@ -106,17 +123,45 @@ button:hover {
     text-align: justify;
     font-size: 16px;
     line-height: 1.5;
-}/* Định dạng thẻ "About" */
-.about-link {
-    text-decoration: none; /* Loại bỏ dấu gạch dưới */
-    color: #007bff; /* Đổi màu chữ (màu xanh dương) theo ý muốn */
-    font-weight: bold; /* Tạo chữ in đậm */
-    font-size: 16px; /* Đặt kích thước phông chữ */
-    transition: color 0.3s; /* Tạo hiệu ứng chuyển màu khi rê chuột */
-
-    /* Nếu bạn muốn thay đổi màu khi hover chuột qua */
 }
+
+/* Định dạng thẻ "About" link */
+.about-link {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
 
 .about-link:hover {
-    color: #ff5733; /* Thay đổi màu chữ khi hover chuột qua (màu cam) */
+    color: #ff5733;
 }
+
+/* CSS cho phần footer và biểu tượng xã hội */
+footer {
+    background-color: #333;
+    color: #fff;
+    text-align: center;
+    padding: 1px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.social-icons {
+    margin-bottom: 10px;
+}
+
+.social-icons a {
+    color: #fff;
+    font-size: 24px;
+    margin: 0 10px;
+    text-decoration: none;
+}
+
+.social-icons a:hover {
+    color: #007bff;
+}
+
