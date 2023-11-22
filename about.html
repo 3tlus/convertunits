@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Giới thiệu sản phẩm và nhóm</title>
+    <link rel="stylesheet" href="style.css">
+    <style>
+        /* CSS cho trang giới thiệu sản phẩm */
+/* Định dạng hình ảnh lớn */
+.team-member {
+    position: relative;
+}
+
+.large-image {
+    content: "";
+    background: url("link_to_large_image.jpg") no-repeat;
+    background-size: cover;
+    width: 200px; /* Điều chỉnh kích thước theo ý muốn */
+    height: 200px; /* Điều chỉnh kích thước theo ý muốn */
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+  .product-introduction {
+            background-color: #f0f0f0;
+            padding: 20px;
+        }
+        
+        .product-introduction h2 {
+            font-size: 24px;
+        }
+        
+        .product-description {
+            margin-top: 20px;
+        }
+        
+        /* CSS cho trang giới thiệu nhóm */
+        .team-introduction {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+        }
+        
+        .team-introduction h2 {
+            font-size: 24px;
+        }
+        
+        .team-member {
+            display: flex;
+            margin-top: 20px;
+            align-items: center;
+        }
+        
+        .team-member img {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            margin-right: 20px;
+        }
+        .about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.5;
+}/* Định dạng thẻ "About" */
+.about-link {
+    text-decoration: none; /* Loại bỏ dấu gạch dưới */
+    color: #007bff; /* Đổi màu chữ (màu xanh dương) theo ý muốn */
+    font-weight: bold; /* Tạo chữ in đậm */
+    font-size: 16px; /* Đặt kích thước phông chữ */
+    transition: color 0.3s; /* Tạo hiệu ứng chuyển màu khi rê chuột */
+
+    /* Nếu bạn muốn thay đổi màu khi hover chuột qua */
+}
+
+.about-link:hover {
+    color: #ff5733; /* Thay đổi màu chữ khi hover chuột qua (màu cam) */
+}
+    </style>
+</head>
+<body>
+    <div class="about-container">
+        <a href="index.html" class="about-link" >Trang Chủ </a>
+    </div>
+    <!-- Trang giới thiệu nhóm -->
+    <div class="team-introduction">
+        <h2>Giới thiệu nhóm</h2>
+        <div class="team-member">
+            
+            <img src="image/16f310149d2115b257f56000643d0292.jpg" alt="Thành viên 1">
+            <div>
+                <h3>Nguyễn Hữu Minh Thọ</h3>
+                <p>MSSV: 21260085</p>
+            </div>
+        </div>
+        
+        <div class="team-member">
+            <img src="image/822892231852636059_1582955365.jpg" alt="Thành viên 2">
+            <div>
+                <h3>Nguyễn Nhật Anh Hào</h3>
+                <p>MSSV: 21260057</p>
+            </div>
+        </div>
+
+        <div class="team-member">
+            <img src="image/1cc76641420d8aa3f49cce5ddb4900e1.jpg" alt="Thành viên 3">
+            <div>
+                <h3>Trương Gia Hỷ</h3>
+                <p>MSSV: 21260063</p>
+            </div>
+        </div>
+        
+    </div>
+</body>
+</html>

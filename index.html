@@ -1,0 +1,218 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title >Chuyển đổi Đơn vị</title>
+        
+        <link rel="stylesheet" href="style.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"> 
+        <link rel="preconnect" href="https://fonts.gstatic.com">
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+        <!-- Thêm thẻ script để tải thư viện AOS -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+        <style>
+        </style>
+    </head>
+    <body>
+        <h1><i class="fas fa-balance-scale"></i> Chuyển đổi Đơn vị<i class="fas fa-balance-scale"></i></h1>
+        <div class="about-container">
+            <a href="about.html" class="about-link">About</a>
+            <!-- <a href="feedback.html" class="feedback-link" onclick="openFeedbackModal()">Feedback</a> -->
+        </div>
+        <!-- KHỐI LƯỢNG -->
+        <div class="converter-mass"  >
+        
+            <h1 class="section-title"><i class="fas fa-weight-hanging"></i>Bảng Khối Lượng<i class="fas fa-weight-hanging"></i></h1>
+
+            <input type="number" id="inputValue" placeholder="Nhập giá trị">
+            <select id="fromUnit" onchange="convertMass()">
+                <option value="kg">Kilogram (kg)</option>
+                <option value="g">Gram (g)</option>
+                <option value="kíp">kíp</option>
+                <option value="microgram">microgram</option>
+                <option value="miligram">miligram</option>
+                <option value="pound">pound</option>  
+                <option value="tạ">tạ</option>  
+                <option value="tấn">tấn</option>  
+            </select>
+            <select id="toUnit" onchange="convertMass()">
+                <option value="kg">Kilogram (kg)</option>
+                <option value="g">Gram (g)</option>
+                <option value="kíp">kíp</option>
+                <option value="microgram">microgram</option>
+                <option value="miligram">miligram</option>
+                <option value="pound">pound</option>  
+                <option value="tạ">tạ</option>  
+                <option value="tấn">tấn</option>  
+            </select>
+            <span id="resultMass">Kết quả sẽ xuất hiện ở đây</span>
+    
+        
+        </div>
+    <!-- THỂ TÍCH -->
+    <div class="converter-volume">
+        <h1 class="section-title"><i class="fas fa-tint"></i>Bảng Thể Tích<i class="fas fa-tint"></i></h1>
+        <input type="number" id="inputValueVolume" placeholder="Nhập giá trị">
+        <select id="fromUnitVolume" onchange="convertVolume()">
+            <option value="cc">Centimeter³ (cc)</option>
+            <option value="cl">Centiliter (cl)</option>
+            <option value="dl">Deciliter (dl)</option>
+            <option value="dm³">Cubic Decimeter (dm³)</option>
+            <option value="Giọt">Giọt</option>
+            <option value="foot³">Cubic Foot (ft³)</option>
+            <option value="gallon">Gallon (gal)</option>
+            <option value="inch³">Cubic Inch (in³)</option>
+            <option value="l">Liter (L)</option>
+            <option value="m³">Cubic Meter (m³)</option>
+            <option value="ml">Milliliter (mL)</option>
+            <option value="mm³">Cubic Millimeter (mm³)</option>
+            <option value="quart">Quart (qt)</option>
+            <option value="thùng">Thùng</option>
+            <option value="thùng (dầu)">Thùng (dầu)</option>
+            <option value="tun">Tun</option>
+            <option value="yard³">Cubic Yard (yd³)</option>
+        </select>
+        <select id="toUnitVolume" onchange="convertVolume()">
+            <option value="cc">Centimeter³ (cc)</option>
+            <option value="cl">Centiliter (cl)</option>
+            <option value="dl">Deciliter (dl)</option>
+            <option value="dm³">Cubic Decimeter (dm³)</option>
+            <option value="Giọt">Giọt</option>
+            <option value="foot³">Cubic Foot (ft³)</option>
+            <option value="gallon">Gallon (gal)</option>
+            <option value="inch³">Cubic Inch (in³)</option>
+            <option value="l">Liter (L)</option>
+            <option value="m³">Cubic Meter (m³)</option>
+            <option value="ml">Milliliter (mL)</option>
+            <option value="mm³">Cubic Millimeter (mm³)</option>
+            <option value="quart">Quart (qt)</option>
+            <option value="thùng">Thùng</option>
+            <option value="thùng (dầu)">Thùng (dầu)</option>
+            <option value="tun">Tun</option>
+            <option value="yard³">Cubic Yard (yd³)</option>
+        </select>
+        <span id="resultVolume">Kết quả sẽ xuất hiện ở đây</span>
+        
+    
+    </div>
+    <!-- ÁP SUẤT -->
+
+    <div class="converter-pressure">
+        <h1 class="section-title"><i class="fas fa-tachometer-alt"></i>Bảng Áp Suất<i class="fas fa-tachometer-alt"></i></h1>
+        <input type="number" id="inputValuePressure" placeholder="Nhập giá trị" >
+        <select id="fromUnitPressure" onchange="convertPressure()">
+            <option value="atm">Atmosphere (Atm)</option>
+            <option value="bar">Bar</option>
+            <option value="cmHg">Centimeters of Mercury (cmHg)</option>
+            <option value="cmH2O">Centimeters of Water (cmH2O)</option>
+            <option value="kgcm2">Kilogram per Square Centimeter (kg/cm²)</option>
+            <option value="kgm2">Kilogram per Square Meter (kg/m²)</option>
+            <option value="kgmm2">Kilogram per Square Millimeter (kg/mm²)</option>
+            <option value="kPa">Kilopascal (kPa)</option>
+        </select>
+        <select id="toUnitPressure" onchange="convertPressure()">
+            <option value="atm">Atmosphere (Atm)</option>
+            <option value="bar">Bar</option>
+            <option value="cmHg">Centimeters of Mercury (cmHg)</option>
+            <option value="cmH2O">Centimeters of Water (cmH2O)</option>
+            <option value="kgcm2">Kilogram per Square Centimeter (kg/cm²)</option>
+            <option value="kgm2">Kilogram per Square Meter (kg/m²)</option>
+            <option value="kgmm2">Kilogram per Square Millimeter (kg/mm²)</option>
+            <option value="kPa">Kilopascal (kPa)</option>
+        </select>
+        <span id="resultPressure">Kết quả sẽ xuất hiện ở đây</span>
+    </div>
+    <!-- Chiều Dài -->
+    <div class="converter-length">
+        <h1 class="section-title"><i class="fas fa-ruler"></i>Bảng Chiều Dài<i class="fas fa-ruler"></i></h1>
+        <input type="number" id="inputValueLength" placeholder="Nhập giá trị">
+        <select id="fromUnitLength" onchange="convertLength()">
+            <option value="cm">Centimeter (cm)</option>
+            <option value="dm">Decimeter (dm)</option>
+            <option value="dặm">Dặm (Dặm)</option>
+            <option value="foot">Foot (foot)</option>
+            <option value="inch">Inch (inch)</option>
+            <option value="gangtay">Găng tay (gang tay)</option>
+            <option value="km">Kilometer (km)</option>
+            <option value="m">Meter (m)</option>
+        </select>
+        <select id="toUnitLength" onchange="convertLength()">
+            <option value="cm">Centimeter (cm)</option>
+            <option value="dm">Decimeter (dm)</option>
+            <option value="dặm">Dặm (Dặm)</option>
+            <option value="foot">Foot (foot)</option>
+            <option value="inch">Inch (inch)</option>
+            <option value="gangtay">Găng tay (gang tay)</option>
+            <option value="km">Kilometer (km)</option>
+            <option value="m">Meter (m)</option>
+        </select>
+        <span id="resultLength">Kết quả sẽ xuất hiện ở đây</span>
+    </div>
+    <!-- Diện Tích -->
+    <div class="converter-area">
+        <h1 class="section-title"><i class="fas fa-square"></i>Bảng Diện Tích<i class="fas fa-square"></i></h1>
+        <input type="number" id="inputValueArea" placeholder="Nhập giá trị">
+        <select id="fromUnitArea" onchange="convertArea()">
+            <option value="cm²">Centimeter Square (cm²)</option>
+            <option value="dm²">Decimeter Square (dm²)</option>
+            <option value="dặm²">Dặm Square (dặm²)</option>
+            <option value="foot²">Foot Square (foot²)</option>
+            <option value="hecta">Hectare (hecta)</option>
+            <option value="inch²">Inch Square (inch²)</option>
+            <option value="km²">Kilometer Square (km²)</option>
+            <option value="m²">Meter Square (m²)</option>
+        </select>
+        <select id="toUnitArea" onchange="convertArea()">
+            <option value="cm²">Centimeter Square (cm²)</option>
+            <option value="dm²">Decimeter Square (dm²)</option>
+            <option value="dặm²">Dặm Square (dặm²)</option>
+            <option value="foot²">Foot Square (foot²)</option>
+            <option value="hecta">Hectare (hecta)</option>
+            <option value="inch²">Inch Square (inch²)</option>
+            <option value="km²">Kilometer Square (km²)</option>
+            <option value="m²">Meter Square (m²)</option>
+        </select>
+        <span id="resultArea">Kết quả sẽ xuất hiện ở đây</span>
+    </div>
+    <!-- Cường Độ Phóng Xạ -->
+    <div class="converter-radioactivity">
+        <h1  class="section-title"  ><i class="fas fa-radiation-alt" ></i> Bảng Cường Độ Phóng Xạ<i class="fas fa-radiation-alt"></i></h1>
+        <input type="number" id="inputValueRadioactivity" placeholder="Nhập giá trị">
+        <select id="fromUnitRadioactivity" onchange="convertRadioactivity()">
+            <option value="Bq">Becquerel (Bq)</option>
+            <option value="Ci">Curie (Ci)</option>
+            <option value="GBq">Gigabecquerel (GBq)</option>
+            <option value="kBq">Kilobecquerel (kBq)</option>
+            <option value="MBq">Megabecquerel (MBq)</option>
+            <option value="mCi">Millicurie (mCi)</option>
+            <option value="µCi">Microcurie (µCi)</option>
+            <option value="nCi">Nanocurie (nCi)</option>
+        </select>
+        <select id="toUnitRadioactivity" onchange="convertRadioactivity()">
+            <option value="Bq">Becquerel (Bq)</option>
+            <option value="Ci">Curie (Ci)</option>
+            <option value="GBq">Gigabecquerel (GBq)</option>
+            <option value="kBq">Kilobecquerel (kBq)</option>
+            <option value="MBq">Megabecquerel (MBq)</option>
+            <option value="mCi">Millicurie (mCi)</option>
+            <option value="µCi">Microcurie (µCi)</option>
+            <option value="nCi">Nanocurie (nCi)</option>
+        </select>
+        <span id="resultRadioactivity">Kết quả sẽ xuất hiện ở đây</span>
+    </div>
+
+
+
+        <script src="js.js"></script>
+        <!-- Thêm phần footer vào cuối trang -->
+        <footer>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/VNUHCM.US" target="_blank" title="Facebook"><i class="fab fa-facebook-square"></i></a>
+                <a href="https://www.linkedin.com/school/vnuhcm---university-of-science/" target="_blank" title="LinkedIn"><i class="fab fa-linkedin"></i></a>
+            </div>
+            <p>&copy; 2023 Chuyển đổi Đơn vị. All rights reserved.</p>
+        </footer>
+    </body>
+    </html>

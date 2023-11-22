@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feedback Page</title>
+    <style>
+        .feedback-link {
+    text-decoration: none; /* Loại bỏ gạch chân từ liên kết */
+    color: #007bff; /* Màu sắc của liên kết (có thể thay đổi tùy ý) */
+}
+
+.feedback-link:hover {
+    text-decoration: underline; /* Hiển thị gạch chân khi di chuột qua liên kết */
+}
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        form {
+            max-width: 400px;
+            margin: 20px auto;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+        }
+
+        input, textarea {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 16px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+        .about-container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    text-align: justify;
+    font-size: 16px;
+    line-height: 1.5;}
+    .about-link {
+    text-decoration: none; /* Loại bỏ dấu gạch dưới */
+    color: #007bff; /* Đổi màu chữ (màu xanh dương) theo ý muốn */
+    font-weight: bold; /* Tạo chữ in đậm */
+    font-size: 16px; /* Đặt kích thước phông chữ */
+    transition: color 0.3s; /* Tạo hiệu ứng chuyển màu khi rê chuột */
+
+    /* Nếu bạn muốn thay đổi màu khi hover chuột qua */
+}
+    </style>
+</head>
+<body>
+    <div class="about-container">
+        <a href="index.html" class="about-link" >Trang Chủ </a>
+    </div>
+
+    <h1>Feedback on Unit Conversion</h1>
+
+    <form id="feedbackForm">
+        <label for="rating">Rating (1-5):</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" required>
+
+        <label for="comments">Comments:</label>
+        <textarea id="comments" name="comments" rows="4" required></textarea>
+
+        <button type="button" onclick="submitFeedback()">Submit Feedback</button>
+    </form>
+
+    <script>
+        function submitFeedback() {
+            var rating = document.getElementById('rating').value;
+            var comments = document.getElementById('comments').value;
+
+            // You can send the feedback data to the server or perform other actions here.
+            // For simplicity, let's log the data to the console.
+            console.log('Rating:', rating);
+            console.log('Comments:', comments);
+
+            // Optionally, you can reset the form after submission.
+            document.getElementById('feedbackForm').reset();
+
+            // You can also show a thank you message or redirect the user to another page.
+            alert('Thank you for your feedback!');
+        }
+    </script>
+
+</body>
+</html>
