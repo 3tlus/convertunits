@@ -23,7 +23,7 @@ const inputValueArea = document.getElementById("inputValueArea");
 const fromUnitSpeed = document.getElementById("fromUnitSpeed");
 const toUnitArea = document.getElementById("toUnitArea");
 const resultArea = document.getElementById("resultArea");
-// Van toc
+// Cuong do phong xa
 const inputValueRadioactivity = document.getElementById("inputValueRadioactivity");
 const fromUnitRadioactivity = document.getElementById("fromUnitRadioactivity");
 const toUnitRadioactivity = document.getElementById("toUnitRadioactivity");
@@ -35,6 +35,10 @@ inputValuePressure.addEventListener("input", convertPressure);
 inputValueLength.addEventListener("input", convertLength);
 inputValueArea.addEventListener("input", convertArea);
 inputValueRadioactivity.addEventListener("input", convertRadioactivity);
+
+
+
+
 // Khoi Luong
 function convertMass() {
     const inputValue = parseFloat(document.getElementById("inputValue").value);
@@ -42,6 +46,8 @@ function convertMass() {
     const toUnit = document.getElementById("toUnit").value;
     let result = 0;
 
+
+    
    // Xử lý chuyển đổi đơn vị khối lượng
    if (fromUnit === "kg") {
     switch (toUnit) {
@@ -2130,5 +2136,3 @@ function convertRadioactivity() {
 
   document.getElementById("resultRadioactivity").innerText = result + " " + toUnit;
 }
-
-

@@ -7,7 +7,22 @@
     <link rel="stylesheet" href="style.css">
     <style>
         /* CSS cho trang giới thiệu sản phẩm */
-        .product-introduction {
+/* Định dạng hình ảnh lớn */
+.team-member {
+    position: relative;
+}
+
+.large-image {
+    content: "";
+    background: url("link_to_large_image.jpg") no-repeat;
+    background-size: cover;
+    width: 200px; /* Điều chỉnh kích thước theo ý muốn */
+    height: 200px; /* Điều chỉnh kích thước theo ý muốn */
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+  .product-introduction {
             background-color: #f0f0f0;
             padding: 20px;
         }
@@ -74,13 +89,14 @@
     <div class="team-introduction">
         <h2>Giới thiệu nhóm</h2>
         <div class="team-member">
+            
             <img src="image/16f310149d2115b257f56000643d0292.jpg" alt="Thành viên 1">
             <div>
-                <h3>Nguyễn Hữu Minh Thọ </h3>
+                <h3>Nguyễn Hữu Minh Thọ</h3>
                 <p>MSSV: 21260085</p>
             </div>
         </div>
-
+        
         <div class="team-member">
             <img src="image/822892231852636059_1582955365.jpg" alt="Thành viên 2">
             <div>
@@ -96,6 +112,7 @@
                 <p>MSSV: 21260063</p>
             </div>
         </div>
+        
     </div>
 </body>
 </html>
